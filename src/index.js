@@ -39,6 +39,7 @@ class Onboarding extends Component {
     Animated.timing(this.state.backgroundColorAnim, {
       toValue: 1,
       duration: this.props.transitionAnimationDuration,
+      useNativeDriver: this.props.useNativeAnimationDriver
     }).start();
   }
 
@@ -259,6 +260,7 @@ Onboarding.propTypes = {
   titleStyles: Text.propTypes.style,
   subTitleStyles: Text.propTypes.style,
   transitionAnimationDuration: PropTypes.number,
+  useNativeAnimationDriver: PropTypes.bool,
   skipToPage: PropTypes.number,
   pageIndexCallback: PropTypes.func,
 };
@@ -287,6 +289,7 @@ Onboarding.defaultProps = {
   titleStyles: null,
   subTitleStyles: null,
   transitionAnimationDuration: 500,
+  useNativeAnimationDriver: false,
   skipToPage: null,
   pageIndexCallback: null,
 };
